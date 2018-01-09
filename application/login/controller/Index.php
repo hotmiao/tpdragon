@@ -22,7 +22,7 @@ class Index extends Controller
         if($validate->scene('login')->check($data)) {
             $model = new \app\common\model\User();
             $user = $model->getUserByTel($data['tel']);
-            if($data['password'] == $user->password) {
+            if($data['password'] == $user->pwd) {
                 Session::set('login', $user);
                 $this->success('登录成功', 'index/index/index');
             }else {
@@ -31,5 +31,11 @@ class Index extends Controller
         }else {
             $this->error($validate->getError());
         }
+    }
+
+    public function layout()
+    {
+        Session::delete('login');
+        $this->redirect('index/index');
     }
 }

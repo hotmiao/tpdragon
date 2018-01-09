@@ -28,6 +28,6 @@ class User extends Validate
     ];
 
     protected $scene = [
-        'login'  =>  ['tel','pwd'],
+        'login'  =>  ['tel','password'],
     ];
 }
