@@ -19,7 +19,7 @@ return [
     // 用户名
     'username'        => 'root',
     // 密码
-    'password'        => '',
+    'password'        => \think\facade\Env::get('db_password'),
     // 端口
     'hostport'        => '',
     // 连接dsn
